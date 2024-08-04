@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=!, initial-scale=1.0,user-scalable=no">
+    <title>介紹運動卡計數器</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* border: 2px solid red; */
+    }
+
+    body {
+        
+        background-image: url(images/footer2.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-attachment: fixed;
+
+    }
+
+
+
+    .banner {
+        height: 5vw;
+        max-height: 50px;
+        /* width:100%; */
+        background-color: #abdbb8;
+        background-image: url(images/LOGO_white.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0 auto;
+    }
+
+    .title {
+        height: 20vw;
+        max-height: 200px;
+        width: 75%;
+        max-width: 1200px;
+        /* background-color: yellow; */
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        place-items: center;
+    }
+
+    .title>div>img {
+        width: 32vw;
+    }
+
+    /* header>div>h1{
+        text-decoration:underline;
+    } */
+
+    .title>a {
+        display: flex;
+        justify-content: center;
+        width: 20vw;
+        height: 8vw;
+        max-width: 270px;
+        max-height: 100px;
+    }
+
+    .title>a {
+        background-image: url(images/button_s.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: 0.2s;
+        /* width:100%; */
+    }
+
+    .title>a:hover {
+        background-image: url(images/button_in.png);
+    }
+
+
+    .introduce {
+        width: 75%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 33.3% 33.3% 33.3%;
+        place-items: center;
+    }
+
+    .intro {
+        position: relative;
+        background-color: #73A48A;
+        font-size: clamp(0px, 1.3vw, 40px);
+        color: #fff;
+        width: 23vw;
+        height: 23vw;
+        max-width: 350px;
+        max-height: 350px;
+        border-radius: 30px;
+        padding: 20px;
+        /* margin:0 5px; */
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* aspect-ratio: 1; */
+    }
+
+    .intro>h3 {
+        padding-bottom: 10px;
+    }
+
+    .subtitle {
+        height: 20vw;
+        max-height: 200px;
+        margin: 0 auto;
+        width: 85%;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #664C41;
+        font-size: clamp(5px, 3vw, 40px);
+    }
+
+    .subtitle>h3>span {
+        font-size: 2vw;
+    }
+
+
+    .subtitle>img {
+        width: 82vw;
+        max-width: 100%;
+    }
+
+    .box,
+    .box2 {
+        background-color: #fff;
+        width: 75%;
+        max-width: 1200px;
+        min-height: 80vh;
+        margin: 0 auto 40px;
+        border-radius: 30px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        place-items: center;
+        position: relative;
+    }
+
+    /* .bigpicbox{
+        width: 80%;
+        margin: 0 auto;
+
+    } */
+
+    .picbox {
+        width: 90%;
+        height: 0;
+        margin: 30px;
+        /* display: flex; */
+        /* justify-content:center; */
+        position: relative;
+        border: solid 2px #73A48A;
+        box-shadow: 10px 10px #73A48A;
+        box-sizing: border-box;
+        padding-bottom: 126.45%;
+    }
+
+    .pic {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: 0.2s;
+        /* position:absolute;
+        top:0;
+        left:0; */
+    }
+
+    #imageA {
+        background-image: url(images/interfaceA.png);
+    }
+
+    #codepic1_1 {
+        background-image: url(images/codepic1_1.png);
+    }
+
+    #codepic1_2 {
+        background-image: url(images/codepic1_2.png);
+    }
+
+    #codepic1_3 {
+        background-image: url(images/codepic1_3.png);
+    }
+
+    #imageB {
+        background-image: url(images/interfaceB.png);
+    }
+
+    #codepic2_1 {
+        background-image: url(images/codepic2_1.png);
+    }
+
+    #codepic2_2 {
+        background-image: url(images/codepic2_2.png);
+    }
+
+    #codepic2_3 {
+        background-image: url(images/codepic2_3.png);
+    }
+
+    #codepic2_4 {
+        background-image: url(images/codepic2_4.png);
+    }
+
+    /* #facepic{
+        display:block;
+    } */
+
+    /* #codepic{ 
+        display: none;
+        position:absolute;
+        top:0;
+        left:0;
+        z-index:10;
+        pointer-events: none;
+        
+    } */
+
+
+    .content {
+        width: 80%;
+        padding: 30px;
+        box-sizing: border-box;
+        color: #664C41;
+    }
+
+    .content>p {
+        font-size: 20px;
+        margin-bottom: 20px;
+        font-weight: bolder;
+    }
+
+    .content>h3 {
+        width: 100%;
+        height: 100px;
+        background-image: url(images/dialog.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: 100%;
+        line-height: 95px;
+        margin-top: 90px
+    }
+
+    ul {
+        list-style-position: inside;
+    }
+
+    .videobox {
+        width: 75%;
+        position: relative;
+        margin: 0 auto;
+        ;
+    }
+
+    footer{
+        margin-top:10vw;
+        height: 5vw;
+        max-height: 50px;
+        background-color: #95BBA7;
+        /* display: flex;
+        justify-content: flex-end;
+        flex-direction: row; */
+        
+    }
+
+    footer>div{
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+    }
+
+    /* footer>div{
+        height: 100%;
+        position: relative;
+        position:absolute;
+        bottom: 0;
+        left:0;
+    } */
+
+    .logolink{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .logolink>img{
+        height:95%;
+        padding:0;
+        margin:0 15px;
+    }
+
+
+</style>
+
+<body>
+    <div class="banner"></div>
+
+    <header>
+        <div class="title">
+            <div>
+                <img src="images/title.png" alt="">
+                <!-- <h1>運動卡計數器</h1>
+                <h4>Sport card counter</h4> -->
+            </div>
+            <!-- <a href="https://nami-chen.github.io/sportcardcounter/sportcounter.html" target="_blank"><img src="images/button_s.png" alt=""></a> -->
+            <a href="https://nami-chen.github.io/sportcardcounter/sportcounter.html" target="_blank"></a>
+        </div>
+        <div class="introduce">
+            <div class="intro">
+                <h3>設計初衷</h3>
+                <p>因在健身中心購買了有時效性且可自由選擇課程的運動卡，但實際使用卻發現使用者無法自行查閱已使用次數與何時到期，故萌生了寫個網頁紀錄運動卡的時效與使用次數。</p>
+            </div>
+            <div class="intro">
+                <h3>設計理念</h3>
+                <p>我的期望是操作不繁瑣且簡潔有力，讓必要的資訊一目瞭然，最主要的功能是能透過程式幫使用者計算尚餘的到齊天數，並且需具備使用次數記錄功能，以便使用者安排課程。</p>
+            </div>
+            <div class="intro">
+                <h3>需求說明</h3>
+                <p>需要能記錄購買時間，後續要能自行計算到期時間，並且個能供使用者自由加減使用次數的計數器。</p>
+            </div>
+        </div>
+    </header>
+    <div class="subtitle">
+        <h3>細節說明<span>Details</span></h3>
+        <img src="images/line.png" alt="subtitleline">
+    </div>
+    <div class="box">
+        <div class="content">
+            <p>輸入初始資料頁面</p>
+            <ul>
+                <li>在裝置上紀錄初始購買次數、與啟用日期。</li>
+                <li>購買的次數方案使用下拉式選單選取。</li>
+                <li>啟用日期使用日曆選取。</li>
+                <li>提交按鈕需要資訊都填妥後才能點擊。</li>
+            </ul>
+            <h3></h3>
+        </div>
+
+            <div class="picbox" id="picbox1">
+                <div class="pic" id="imageA"></div>
+                <!-- <img class="pic" id="facepic" src="images/interface1_1.png" alt="interface1">
+            <img class="pic" id="codepic" src="images/LOGO.png" alt="pop"> -->
+            </div>
+
+    </div>
+    <div class="box2">
+        <div class="picbox" id="picbox2">
+            <div class="pic" id="imageB"></div>
+            <!-- <img class="pic" src="images/interface2.png" alt="interface2">
+            <img class="pic" src="images/未命名.png" alt="pop"> -->
+        </div>
+        <div class="content">
+            <p>主要顯示畫面</p>
+            <ul>
+                <li>依照使用者輸入的啟用日期自動計算到期日期與有效的天數</li>
+                <li>顯示最後更動的日期與目前使用次數。</li>
+                <li>能自由加減使用次數，計數器歸零前會有系統提醒</li>
+                <li>因使用習慣預計為每周一次，故有添加顯示尚餘週數以便安排運動卡的使用</li>
+                <li>以上資料皆存在瀏覽器中，開啟瀏覽器即可快速紀錄</li>
+            </ul>
+            <h3></h3>
+        </div>
+    </div>
+    <div class="subtitle">
+        <h3>介紹影片<span>introduction video</span></h3>
+        <img src="images/line.png" alt="subtitleline">
+    </div>
+
+    <style>
+        .embed-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+
+        .embed-container iframe,
+        .embed-container object,
+        .embed-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <div class="videobox">
+        <div class='embed-container'>
+            <iframe width='560' height='315' src='https://www.youtube-nocookie.com/embed/o5DfTu2v2d0?rel=0'
+                frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+                allowfullscreen>
+
+            </iframe>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <a class="logolink" id="logolinkA" href="https://pda.104.com.tw/profile/share/bGuSN9TlHPRG0HaJCrUj8dVWDlQwLtIe" target="_blank"> <img src="images/logo_button_104.png" alt="104"></a>
+             <a class="logolink" id="logolinkB" href="https://github.com/nami-chen/sportcardcounter" target="_blank"><img src="images/logo_button_github.png" alt="github"></a>
+        </div>
+    </footer>
+
+
+</body>
+<script>
+    // document.getElementsByClassName("picbox")[0].addEventListener("mouseover",function(){
+    //     document.getElementsByClassName("pic")[0].id="codepic1_1"
+    //     // codepic.style.display="block"
+    //     // facepic.style.display="none"
+    // })
+
+
+    // document.getElementsByClassName("picbox")[0].addEventListener("click",function(evt){
+    //     console.log(evt.clientX,evt.clientY)
+    // })
+
+    document.getElementsByClassName("pic")[0].addEventListener("mousemove", function (evt) {
+        const rect = picbox1.getBoundingClientRect();
+        const y = evt.offsetY;
+
+        //  codepic.style.left = evt.clientX -200 + "px"
+        //  codepic.style.top = evt.clientY + "px"
+        if (y < rect.height * 0.33) {
+            document.getElementsByClassName("pic")[0].id = "codepic1_1"
+        } else if (y < rect.height * 0.66) {
+            document.getElementsByClassName("pic")[0].id = "codepic1_2"
+        } else {
+            document.getElementsByClassName("pic")[0].id = "codepic1_3"
+        }
+    })
+
+    document.getElementsByClassName("picbox")[0].addEventListener("mouseleave", function () {
+        document.getElementsByClassName("pic")[0].id = "imageA"
+        // codepic.style.display="none"
+        // facepic.style.display="block"
+    })
+
+
+    document.getElementsByClassName("pic")[1].addEventListener("mousemove", function (evt) {
+        const rect = picbox2.getBoundingClientRect();
+        const y = evt.offsetY;
+
+        if (y < rect.height * 0.25) {
+            document.getElementsByClassName("pic")[1].id = "codepic2_1"
+        } else if (y < rect.height * 0.5) {
+            document.getElementsByClassName("pic")[1].id = "codepic2_2"
+        } else if (y < rect.height * 0.75) {
+            document.getElementsByClassName("pic")[1].id = "codepic2_3"
+        } else {
+            document.getElementsByClassName("pic")[1].id = "codepic2_4"
+        }
+    })
+
+    document.getElementsByClassName("picbox")[1].addEventListener("mouseleave", function () {
+        document.getElementsByClassName("pic")[1].id = "imageB"
+        // codepic.style.display="none"
+        // facepic.style.display="block"
+    })
+
+</script>
+
+</html>
