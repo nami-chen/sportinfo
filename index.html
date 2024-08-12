@@ -39,7 +39,6 @@
     .banner {
         height: 5vw;
         max-height: 50px;
-        /* width:100%; */
         background-color: #A8D2BC;
         background-image: url(images/LOGO_white.png);
         background-size: contain;
@@ -53,7 +52,6 @@
         max-height: 200px;
         width: 75%;
         max-width: 1200px;
-        /* background-color: yellow; */
         margin: 0 auto;
         display: grid;
         grid-template-columns: 50% 50%;
@@ -63,10 +61,6 @@
     .title>div>img {
         width: 32vw;
     }
-
-    /* header>div>h1{
-        text-decoration:underline;
-    } */
 
     .title>a {
         display: flex;
@@ -83,7 +77,6 @@
         background-repeat: no-repeat;
         background-position: center;
         transition: 0.2s;
-        /* width:100%; */
     }
 
     .title>a:hover {
@@ -111,12 +104,10 @@
         max-height: 350px;
         border-radius: 30px;
         padding: 20px;
-        /* margin:0 5px; */
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        /* aspect-ratio: 1; */
     }
 
     .intro>h3 {
@@ -126,8 +117,6 @@
     @media screen and (max-width:576px) {
         .introduce{
             display: flex;
-            /* flex-direction: column; */
-            /* justify-content: center; */
             flex-wrap: wrap;
             min-height:400px;
         }
@@ -178,18 +167,11 @@
         box-shadow: 0 0 2px 3px #D1D1D1;
     }
 
-    /* .bigpicbox{
-        width: 80%;
-        margin: 0 auto;
-
-    } */
 
     .picbox {
         width: 90%;
         height: 0;
         margin: 30px;
-        /* display: flex; */
-        /* justify-content:center; */
         position: relative;
         border: solid 2px #73A48A;
         box-shadow: 5px 5px #73A48A;
@@ -206,9 +188,6 @@
         background-size: contain;
         background-repeat: no-repeat;
         transition: 0.2s;
-        /* position:absolute;
-        top:0;
-        left:0; */
     }
 
     #imageA {
@@ -246,21 +225,6 @@
     #codepic2_4 {
         background-image: url(images/codepic2_4.png);
     }
-
-    /* #facepic{
-        display:block;
-    } */
-
-    /* #codepic{ 
-        display: none;
-        position:absolute;
-        top:0;
-        left:0;
-        z-index:10;
-        pointer-events: none;
-        
-    } */
-
 
     .content {
         width: 80%;
@@ -325,20 +289,71 @@
     }
 
     .videobox {
-        width: 75%;
+        width: 60vw;
+        max-width: 75%;
         position: relative;
         margin: 0 auto;
-        ;
+
     }
+
+    #thumbnail{
+        width:100%;
+                cursor: pointer;
+    }
+
+    #popup.hidden{
+        display: none;
+    }
+
+    #popup{
+        position:fixed;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* z-index: 1000; */
+    }
+
+    .popup-content {
+    position: relative;
+    width: 80%;
+    max-width: 75vw; 
+    height: 0;
+    padding-bottom: 39.25%; 
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    #youtube-iframe{
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain; 
+    }
+
+    #close-btn {
+        position: absolute;
+        top: -4.5vw;
+        right: -3.5vw;
+        color: #fff;
+        font-size: 5vw;
+        cursor: pointer;
+    }
+
 
     footer{
         margin-top:10vw;
         height: 5vw;
         max-height: 50px;
         background-color: #95BBA7;
-        /* display: flex;
-        justify-content: flex-end;
-        flex-direction: row; */
         
     }
 
@@ -349,13 +364,6 @@
         flex-direction: row;
     }
 
-    /* footer>div{
-        height: 100%;
-        position: relative;
-        position:absolute;
-        bottom: 0;
-        left:0;
-    } */
 
     .logolink{
         height: 100%;
@@ -391,10 +399,7 @@
         <div class="title">
             <div>
                 <img src="images/title.png" alt="">
-                <!-- <h1>運動卡計數器</h1>
-                <h4>Sport card counter</h4> -->
             </div>
-            <!-- <a href="https://nami-chen.github.io/sportcardcounter/sportcounter.html" target="_blank"><img src="images/button_s.png" alt=""></a> -->
             <a href="https://nami-chen.github.io/sportcardcounter/sportcounter.html" target="_blank"></a>
         </div>
         <div class="introduce">
@@ -430,16 +435,12 @@
 
             <div class="picbox" id="picbox1">
                 <div class="pic" id="imageA"></div>
-                <!-- <img class="pic" id="facepic" src="images/interface1_1.png" alt="interface1">
-            <img class="pic" id="codepic" src="images/LOGO.png" alt="pop"> -->
             </div>
 
     </div>
     <div class="box2">
         <div class="picbox" id="picbox2">
             <div class="pic" id="imageB"></div>
-            <!-- <img class="pic" src="images/interface2.png" alt="interface2">
-            <img class="pic" src="images/未命名.png" alt="pop"> -->
         </div>
         <div class="content">
             <p>主要顯示畫面</p>
@@ -458,7 +459,24 @@
         <img src="images/line.png" alt="subtitleline">
     </div>
 
-    <style>
+    <div class="videobox">
+        <img src="images/Thumbnail.png" alt="thumbnail" id="thumbnail" >
+        <div id="popup" class="hidden">
+            <div class="popup-content">
+                <span id="close-btn">&times;</span>
+                <iframe id="youtube-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <a class="logolink" id="logolinkA" href="https://pda.104.com.tw/profile/share/diFgmM9lWYT4HaAlNq9Z8M96zl5AqtkS" target="_blank"> <img src="images/logo_button_104.png" alt="104"></a>
+             <a class="logolink" id="logolinkB" href="https://github.com/nami-chen/sportcardcounter" target="_blank"><img src="images/logo_button_github.png" alt="github"></a>
+        </div>
+    </footer>
+
+    <!-- <style>
         .embed-container {
             position: relative;
             padding-bottom: 56.25%;
@@ -485,35 +503,19 @@
 
             </iframe>
         </div>
-    </div>
+    </div> -->
 
-    <footer>
-        <div>
-            <a class="logolink" id="logolinkA" href="https://pda.104.com.tw/profile/share/diFgmM9lWYT4HaAlNq9Z8M96zl5AqtkS" target="_blank"> <img src="images/logo_button_104.png" alt="104"></a>
-             <a class="logolink" id="logolinkB" href="https://github.com/nami-chen/sportcardcounter" target="_blank"><img src="images/logo_button_github.png" alt="github"></a>
-        </div>
-    </footer>
+    
 
 
 </body>
 <script>
-    // document.getElementsByClassName("picbox")[0].addEventListener("mouseover",function(){
-    //     document.getElementsByClassName("pic")[0].id="codepic1_1"
-    //     // codepic.style.display="block"
-    //     // facepic.style.display="none"
-    // })
 
-
-    // document.getElementsByClassName("picbox")[0].addEventListener("click",function(evt){
-    //     console.log(evt.clientX,evt.clientY)
-    // })
 
     document.getElementsByClassName("pic")[0].addEventListener("mousemove", function (evt) {
         const rect = picbox1.getBoundingClientRect();
         const y = evt.offsetY;
 
-        //  codepic.style.left = evt.clientX -200 + "px"
-        //  codepic.style.top = evt.clientY + "px"
         if (y < rect.height * 0.33) {
             document.getElementsByClassName("pic")[0].id = "codepic1_1"
         } else if (y < rect.height * 0.66) {
@@ -525,8 +527,6 @@
 
     document.getElementsByClassName("picbox")[0].addEventListener("mouseleave", function () {
         document.getElementsByClassName("pic")[0].id = "imageA"
-        // codepic.style.display="none"
-        // facepic.style.display="block"
     })
 
 
@@ -547,8 +547,19 @@
 
     document.getElementsByClassName("picbox")[1].addEventListener("mouseleave", function () {
         document.getElementsByClassName("pic")[1].id = "imageB"
-        // codepic.style.display="none"
-        // facepic.style.display="block"
+
+    })
+
+
+    document.getElementById("thumbnail").addEventListener("click",function(){
+        document.getElementById("youtube-iframe").src = 'https://www.youtube-nocookie.com/embed/o5DfTu2v2d0?autoplay=1';
+
+        document.getElementById("popup").classList.remove("hidden");
+    })
+
+    document.getElementById("close-btn").addEventListener("click",function(){
+        document.getElementById("popup").classList.add("hidden");
+        document.getElementById("youtube-iframe").src = "";
     })
 
 </script>
