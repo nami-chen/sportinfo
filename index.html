@@ -40,7 +40,7 @@
         height: 5vw;
         max-height: 50px;
         /* width:100%; */
-        background-color: #abdbb8;
+        background-color: #A8D2BC;
         background-image: url(images/LOGO_white.png);
         background-size: contain;
         background-position: center;
@@ -123,6 +123,23 @@
         padding-bottom: 10px;
     }
 
+    @media screen and (max-width:576px) {
+        .introduce{
+            display: flex;
+            /* flex-direction: column; */
+            /* justify-content: center; */
+            flex-wrap: wrap;
+            min-height:400px;
+        }
+
+        .intro{
+            width: 100%;
+            font-size:clamp( 5px, 3.1vw ,14px) ;
+            height:35vw;
+            max-height: 125px;
+        }
+    }
+
     .subtitle {
         height: 20vw;
         max-height: 200px;
@@ -133,11 +150,11 @@
         flex-direction: column;
         justify-content: center;
         color: #664C41;
-        font-size: clamp(5px, 3vw, 40px);
+        font-size: clamp(15px, 3vw, 40px);
     }
 
     .subtitle>h3>span {
-        font-size: 2vw;
+        font-size: clamp(10px, 2.2vw, 25px);
     }
 
 
@@ -158,6 +175,7 @@
         grid-template-columns: 50% 50%;
         place-items: center;
         position: relative;
+        box-shadow: 0 0 2px 3px #D1D1D1;
     }
 
     /* .bigpicbox{
@@ -174,7 +192,7 @@
         /* justify-content:center; */
         position: relative;
         border: solid 2px #73A48A;
-        box-shadow: 10px 10px #73A48A;
+        box-shadow: 5px 5px #73A48A;
         box-sizing: border-box;
         padding-bottom: 126.45%;
     }
@@ -246,6 +264,7 @@
 
     .content {
         width: 80%;
+        margin:15px 0;
         padding: 30px;
         box-sizing: border-box;
         color: #664C41;
@@ -267,6 +286,38 @@
         text-align: 100%;
         line-height: 95px;
         margin-top: 90px
+    }
+
+    @media screen and (max-width:760px) {
+        .box,.box2 {
+            display:flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 95%;
+            min-height: 0;
+        }
+
+        .picbox{
+            box-shadow: none;
+        }
+
+        .content{
+            width: 70%;
+            padding:0;
+        }
+
+        .content>h3 {
+            background-image: url(images/dialog2.png);
+        }
+
+    }
+
+    @media screen and (max-width:576px) {
+        .picbox{
+            padding-bottom: 117.5%;
+            background-color: #73A48A;
+        }
+        
     }
 
     ul {
@@ -317,6 +368,17 @@
         height:95%;
         padding:0;
         margin:0 15px;
+    }
+
+    @media screen and (max-width:576px) {
+        .banner {
+            height: 7vw;
+        }
+        footer{
+            height: 10vw;
+        max-height: 100px;
+        }
+        
     }
 
 
