@@ -152,8 +152,7 @@
         max-width: 100%;
     }
 
-    .box,
-    .box2 {
+    #box,#box2 {
         background-color: #fff;
         width: 75%;
         max-width: 1200px;
@@ -253,7 +252,7 @@
     }
 
     @media screen and (max-width:760px) {
-        .box,.box2 {
+        #box,#box2 {
             display:flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -274,6 +273,9 @@
             background-image: url(images/dialog2.png);
         }
 
+        #box2{
+            flex-direction: column-reverse;
+        }
     }
 
     @media screen and (max-width:576px) {
@@ -421,7 +423,7 @@
         <h3>細節說明<span>Details</span></h3>
         <img src="images/line.png" alt="subtitleline">
     </div>
-    <div class="box">
+    <div id="box">
         <div class="content">
             <p>輸入初始資料頁面</p>
             <ul>
@@ -438,7 +440,7 @@
             </div>
 
     </div>
-    <div class="box2">
+    <div id="box2" >
         <div class="picbox" id="picbox2">
             <div class="pic" id="imageB"></div>
         </div>
